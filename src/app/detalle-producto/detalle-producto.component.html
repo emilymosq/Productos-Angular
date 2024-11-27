@@ -1,0 +1,14 @@
+<div class="card-title fs-2 fw-bold my-1">Detalles de la Tarea</div>
+<button class="boton-Atras d-flex" (click)="enviarAtrasLista()">
+  <i class="bi bi-chevron-compact-left signo-Atras color-dark"></i>
+  <p class="mb-0 notas-Text">Atras</p>
+</button>
+
+<div class="justify-content-center shadow-sm py-4 px-3 rounded-3 cuadroDato text-center">
+
+  <p>ID: {{ tarea?.id }}</p>
+  <p>Nombre: {{ tarea?.nombre }}</p>
+  <p>Precio: {{ tarea?.precio }}</p>
+  <p>Stock: {{ tarea?.stock }}</p>
+
+</div>

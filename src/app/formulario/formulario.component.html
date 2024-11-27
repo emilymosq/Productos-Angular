@@ -1,0 +1,12 @@
+<form [formGroup]="formulario" (submit)="enviarEstado()" class="w-75 m-auto row justify-content-center row-gap-3 mt-3 border-bottom-secondary-subtle pb-3">
+    <div class="col-11">
+        <select formControlName="estado" class="form-select">
+            <option value="todos">Todos</option>
+            <option value="Disponible">Disponible</option>
+            <option value="No disponible">No disponible</option>
+        </select>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-outline-secondary bg-black">Filtrar</button>
+    </div>
+</form>
