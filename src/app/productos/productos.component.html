@@ -1,20 +1,23 @@
 <div class="container">
   <div class="card-title fs-2 fw-bold mb-3">Lista de Tareas</div>
-
   <app-formulario></app-formulario>
-
   <div id="contenedor-lista" class="containerLista row gap-3 justify-content-center">
-    <div class=" col-3 shadow-sm py-4 px-3 rounded-3 cuadrado-lista" *ngFor="let producto of productos">
-    <div *ngIf="estado == 'todos' || estado == '' || estado == producto.estado" class="{{producto?.stock ? 'text-success' : 'text-danger'}} ">
+    <div
+      class="col-3 shadow-sm py-4 px-3 rounded-3 cuadrado-lista position-relative"
+      *ngFor="let producto of productos">
 
-        <p>ID: {{ producto.id }}</p>
+      <div *ngIf="estado === 'todos' || estado === '' || estado === producto.estado">
+        <div class="d-flex align-items-center">
+          <p class="mb-0"><b>ID:</b> {{ producto.id }}</p>
+          <span class="ms-2 rounded-circle" [ngStyle]="{'background-color': producto?.stock ? 'green' : 'red'}" style="width: 15px; height: 15px"></span>
+        </div>
         <p><b>Nombre:</b> {{ producto.nombre }}</p>
-        <p>Precio: {{ producto.precio }}</p>
-        <!-- <p><b>Estado:</b> {{ producto.estado }}</p> -->
+        <p><b>Precio:</b> {{ producto.precio }}</p>
         <a class="btn text-end tareaDatos text-decoration-underline"
-           (click)="enviarDatos(producto)"><i>Ver mas.</i></a>
-
-
+           (click)="enviarDatos(producto)">
+          <i>Ver más.</i>
+        </a>
+      </div>
     </div>
   </div>
 </div>
